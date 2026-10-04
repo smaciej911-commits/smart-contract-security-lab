@@ -1,0 +1,12 @@
+/out/
+/cache/
+/broadcast/
+/.env
+/.env.*
+!/.env.example
+!/.env.template
+/keystore/
+*.pem
+*.key
+*.keystore
+*.log

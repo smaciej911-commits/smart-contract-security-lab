@@ -1,0 +1,25 @@
+name: Security CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  local-labs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: foundry-rs/foundry-toolchain@v1
+      - name: Show Foundry version
+        run: forge --version
+      - name: Check Solidity formatting
+        run: forge fmt --check
+      - name: Build contracts and report sizes
+        run: forge build --sizes
+      - name: Run local exploits, regressions, and invariants
+        run: forge test -vvv

@@ -1,0 +1,1 @@
+Each case's vulnerable and fixed Solidity models live in its directory under `src/`; their local tests and README live under the matching directory in `test/`. The historical Parity fork test lives under `fork-test/` and uses the `historical` Foundry profile.
